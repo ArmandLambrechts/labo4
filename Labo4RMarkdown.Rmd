@@ -1,0 +1,77 @@
+---
+title: "Labo 4"
+author: "Armand Lambrechts"
+date: "17 november 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Our Location
+```{r echo = FALSE, warning=FALSE}
+library(leaflet)
+
+EAIcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/tech.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+ITcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/it.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+BUScon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/business.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+EDUcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/education.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+HEAcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/healthcare.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+MADcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/mad.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+MNTcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/media_and_tourism.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+MUScon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/music.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+SOCcon <- makeIcon(
+  iconUrl = "http://11501671.pxl-ea-ict.be/LogoPXL/social_work.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+
+
+
+EA_map <- leaflet() %>% 
+  addTiles() %>%
+  addMarkers(lng=5.384984, lat=50.927781, icon = EAIcon) %>%        #TECH
+  addMarkers(lng=5.347868, lat=50.937550 , icon = ITcon) %>%           #IT & business & music &social
+
+  addMarkers(lng=5.346628, lat=50.935139 , icon = EDUcon) %>%           #education
+  addMarkers(lng=5.342499, lat=50.927908 , icon = HEAcon) %>%           #healthcare
+  addMarkers(lng= 5.350088, lat=50.938167 , icon = MADcon) %>%           #MAD
+  addMarkers(lng=5.345850, lat=50.935141 , icon = MNTcon)            #media en tourisme
+
+EA_map
+
+```
+
